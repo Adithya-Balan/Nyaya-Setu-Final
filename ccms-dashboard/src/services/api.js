@@ -11,7 +11,7 @@ export async function analyzeJudgment(file) {
       body: formData,
     })
   } catch (networkError) {
-    throw new Error(`Backend unreachable: ${networkError.message}. Ensure the server is running on port 8000.`)
+    throw new Error(`Backend unreachable: ${networkError.message}. Ensure VITE_API_URL is set for the frontend build.`)
   }
 
   if (!response.ok) {
